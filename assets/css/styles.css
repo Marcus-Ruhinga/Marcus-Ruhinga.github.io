@@ -1,0 +1,444 @@
+/* Base & Layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  padding-top: 0px; /* Adjust to match your fixed navbar height */
+}
+
+/* Navbar */
+nav.navbar {
+  background: linear-gradient(
+    to bottom,
+    rgba(43, 58, 103, 0.85),
+    rgba(43, 58, 103, 0.4)
+  );
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+}
+
+.nav-link {
+  color: #ffffff !important;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #868da2 !important;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #2B3A67 !important;
+  border-radius: 5px;
+}
+
+/* Optional custom nav-link styling if you use .nav-link-custom */
+.nav-link-custom {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+}
+.nav-link-custom:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Hero Section */
+/* Ensure hero fills full viewport */
+#hero {
+  height: 100vh;
+  position: relative;
+}
+
+/* The rotating background container */
+#heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+}
+
+/* Overlay color to ensure readability over background images */
+.overlay-color,
+#hero .overlay-color {
+  background-color: rgba(43, 58, 103, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Ensure hero content sits above overlays */
+#hero .container,
+#hero .row,
+#hero .col-lg-6,
+#hero h4,
+#hero h1,
+#hero p,
+#hero a {
+  position: relative;
+  z-index: 1;
+}
+
+/* Typing cursor */
+#cursor {
+  font-weight: bold;
+  font-size: 2rem;
+  color: white;
+  animation: blink 0.7s infinite;
+  display: inline-block;
+  margin-left: 2px;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Animate-on-scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Profile Picture Box in Hero */
+.profile-box {
+  width: 400px;      /* match inline dimension or adjust */
+  height: 380px;     /* adjust as desired */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;    /* center horizontally */
+}
+
+/* The image inside profile-box */
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* Border line below the profile-box */
+.profile-border-line {
+  position: absolute;
+  bottom: -10px;  /* adjust distance below the box */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;     /* adjust length of the line relative to box */
+  height: 4px;    /* thickness */
+  background-color: white; /* or another accent color */
+}
+
+/* Sections spacing */
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* About Section */
+#about.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+/* Buttons */
+.btn-light {
+  color: #2B3A67;
+  background-color: #ffffff;
+  border: 2px solid transparent;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.btn-light:hover {
+  background-color: rgba(255,255,255,0.9);
+  transform: scale(1.03);
+}
+
+/* Footer link hover */
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Cards (e.g., Skills, Projects) */
+.card {
+  border: none;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  border-radius: 1rem;
+}
+.card-title {
+  color: #2B3A67;
+}
+
+/* Fade-in-up utility (if still used elsewhere) */
+.fade-in-up {
+  animation: fadeInUp 1s ease both;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Form focus */
+.form-control:focus {
+  border-color: #6C63FF;
+  box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+}
+/* Animation classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-visible-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-visible-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Fly-in animation setup */
+.fly-in-init {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+.fly-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Contact Section Styles */
+#contact {
+  background-color: #f8f9fa;
+}
+
+.contact-info h5 {
+  font-size: 1.1rem;
+  color: #2B3A67;
+}
+
+.contact-info p {
+  color: #495057;
+  font-size: 1rem;
+}
+
+.contact-form .form-control {
+  background-color: transparent;
+  padding-left: 0;
+  border-radius: 0;
+  border-color: #dee2e6;
+}
+
+.contact-form .form-control:focus {
+  box-shadow: none;
+  border-color: #2B3A67;
+}
+
+.contact-form label {
+  color: #2B3A67;
+}
+
+.btn-primary {
+  background-color: #2B3A67;
+  border-color: #2B3A67;
+}
+
+.bg-primary {
+  background-color: #2B3A67;
+  border-color: #2B3A67;
+}
+
+.btn-primary:hover {
+  background-color: #1a2a57;
+  border-color: #1a2a57;
+}
+
+hr.border-secondary {
+  border-color: rgba(0,0,0,0.1) !important;
+}
+/* Projects Section Styles */
+#projects .project-card {
+  transition: transform 0.3s ease;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#projects .project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#projects .project-img {
+  transition: transform 0.3s ease;
+  height: 200px;
+  object-fit: cover;
+}
+
+#projects .project-card:hover .project-img {
+  transform: scale(1.03);
+}
+
+#projects .tech-badges .badge {
+  font-weight: 500;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+}
+
+/* Animation classes */
+.animate-on-scroll-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-visible {
+  opacity: 1;
+  transform: translate(0);
+}
+/* Projects Section Styles */
+#projects {
+  background-color: #f8f9fa;
+}
+
+#projects .project-card {
+  transition: transform 0.3s ease;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(43, 58, 103, 0.1);
+}
+
+#projects .project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(43, 58, 103, 0.15);
+}
+
+#projects .project-img {
+  transition: transform 0.3s ease;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+#projects .project-card:hover .project-img {
+  transform: scale(1.03);
+}
+
+.tech-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #2B3A67;
+  background-color: rgba(43, 58, 103, 0.1);
+  border: 1px solid #2B3A67;
+  border-radius: 20px;
+}
+
+/* Animation classes */
+.animate-on-scroll-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-visible {
+  opacity: 1;
+  transform: translate(0);
+}
+/* Unified Heading Styles */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2B3A67;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #2B3A67;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2B3A67;
+  margin-bottom: 1rem;
+}
